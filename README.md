@@ -10,7 +10,8 @@ Due to the introduction of new UI components in Unity during the mid-2018 develo
 2.Click "Tools" → "Compatibility Low UI" in the top menu of Unity and wait for the replacement process to complete.<br>
 3.Exit the Unity editor. If prompted to save the scene, click save and then reopen it.<br>
 4.Click on any UI element or EventSystem to ensure that all UI elements have been replaced with the script.<br>
-5.Open the project with an older version of Unity and attempt to convert the project. After the conversion is complete, check the UI for any issues.<br>
+5.Convert all prefabs in the scene into instances.<br>
+6.Open the project with an older version of Unity and attempt to convert the project. After the conversion is complete, check the UI for any issues.<br>
 
 # Additional:
 
@@ -28,7 +29,8 @@ GameButton.cs is a new button tool that supports single-click, double-click, and
 2.点击Unity顶部的"Tools"→"Compatibility Low UI"来等待替换完成。<br>
 3.退出Unity编辑器，如果要求保存场景则点击保存，然后重新打开。<br>
 4.随便点击任何UI或者EventSystem，确保所有的UI都已经替换成了脚本。<br>
-5.用旧版本Unity打开项目，尝试转换项目，转换完成后检查UI。<br>
+5.把场景里的所有预制体转化为实例。<br>
+6.用旧版本Unity打开项目，尝试转换项目，转换完成后检查UI。<br>
 
 # 附加：
 GameButton.cs是一个新的按钮工具，它支持按钮的单击、双击、长按。如果你不需要这个功能，可以删除。<br>
