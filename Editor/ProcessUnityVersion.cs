@@ -45,9 +45,15 @@ public class ProcessUnityVersion
         {"m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}", "m_Script: {fileID: 11500000, guid: d9a7125dc73df8b42872961c2c4803f7, type: 3}"},
         //VideoPlayer
         {"m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}", "m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}"},
+        //VerticalLayoutGroup
+        {"m_Script: {fileID: 11500000, guid: ac259d9dc20118d4480fe3b36160f04f, type: 3}", "m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}"},
+        //HorizontalLayoutGroup
+        {"m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}", "m_Script: {fileID: 11500000, guid: e4d60be2bb90417429b997856daf7ef9, type: 3}"},
+        //LayoutElement
+        {"m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}", "m_Script: {fileID: 11500000, guid: 69ff41bc90432024a8eccd96943ae8ef, type: 3}"},
     };
 
-    [MenuItem("Tools/Compatibility Low UI")]
+    [MenuItem("Tools/替换UI引用")]
     public static void Process()
     {
         ProcessAllPrefabs("*.prefab");

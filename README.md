@@ -13,10 +13,6 @@ Due to the introduction of new UI components in Unity during the mid-2018 develo
 5.Convert all prefabs in the scene into instances.<br>
 6.Open the project with an older version of Unity and attempt to convert the project. After the conversion is complete, check the UI for any issues.<br>
 
-# Additional:
-
-GameButton.cs is a new button tool that supports single-click, double-click, and long-press functionalities. If you do not require this feature, you can delete it.<br>
-
 ## CN
 
 # Unity UI 低版本兼容工具 (高版本转2018.3)
@@ -31,6 +27,3 @@ GameButton.cs is a new button tool that supports single-click, double-click, and
 4.随便点击任何UI或者EventSystem，确保所有的UI都已经替换成了脚本。<br>
 5.把场景里的所有预制体转化为实例。<br>
 6.用旧版本Unity打开项目，尝试转换项目，转换完成后检查UI。<br>
-
-# 附加：
-GameButton.cs是一个新的按钮工具，它支持按钮的单击、双击、长按。如果你不需要这个功能，可以删除。<br>
