@@ -70,31 +70,42 @@ public class ProcessUnityVersion
         ProcessAllPrefabs("*.prefab");
         ProcessAllPrefabs("*.anim");
     }
-    private static void ProcessAllPrefabs(string form)
+
+    [MenuItem("Tools/反向替换UI引用")]
+    public static void ReverseProcess()
+    {
+        ProcessAllPrefabs("*.prefab", true);
+        ProcessAllPrefabs("*.anim", true);
+    }
+
+    private static void ProcessAllPrefabs(string form, bool reverse = false)
     {
         List<GameObject> prefabs = new List<GameObject>();
         var resourcesPath = Application.dataPath;
-        var absolutePaths = System.IO.Directory.GetFiles(resourcesPath, form, System.IO.SearchOption.AllDirectories);
+        var absolutePaths = Directory.GetFiles(resourcesPath, form, SearchOption.AllDirectories);
         for (int i = 0; i < absolutePaths.Length; i++)
         {
             Debug.Log("prefab name: " + absolutePaths[i]);
             foreach (var VARIABLE in prefab_replaceDict)
             {
-                ReplaceValue(absolutePaths[i], VARIABLE.Key, VARIABLE.Value);
+                string oldValue = reverse ? VARIABLE.Value : VARIABLE.Key;
+                string newValue = reverse ? VARIABLE.Key : VARIABLE.Value;
+                ReplaceValue(absolutePaths[i], oldValue, newValue);
             }
             EditorUtility.DisplayProgressBar("处理预制体……", "处理预制体中……", (float)i / absolutePaths.Length);
         }
         EditorUtility.ClearProgressBar();
     }
+
     /// <summary>
     /// 替换值
     /// </summary>
-    /// <param name="strFilePath">txt等文件的路径</param>
+    /// <param name="strFilePath">文件路径</param>
     private static void ReplaceValue(string strFilePath, string oldLine, string newLine)
     {
         if (File.Exists(strFilePath))
         {
-            string[] lines = System.IO.File.ReadAllLines(strFilePath);
+            string[] lines = File.ReadAllLines(strFilePath);
             for (int i = 0; i < lines.Length; i++)
             {
                 lines[i] = lines[i].Replace(oldLine, newLine);
